@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 250%;
+    }
+</style>
+
+@using (Html.BeginForm("Resume", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    <h1>@Html.Label("Resume")</h1>
+    <table>
+        <tr>
+            <td>@Html.Label("First Name")</td>
+            <td>@Html.TextBox("firstName")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Last Name")</td>
+            <td>@Html.TextBox("lastName")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("date of birth")</td>
+            <td><input id="dateInput" name="dateOfBirth" type="date" width="10" class="date" /><br></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("sex")</td>
+            <td>
+                @Html.RadioButton("sex", "male")
+                <span>male</span> <br />
+                @Html.RadioButton("sex", "female")
+                <span>female</span> <br />
+                @Html.RadioButton("sex", "other", true)
+                <span>other</span>
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("email")</td>
+            <td>@Html.TextBox("email")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Work experience")</td>
+            <td>@Html.TextArea("workExperience", "")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("type education")</td>
+            <td>
+                @Html.RadioButton("typeEducation", "bakalavr")
+                <span>bakalavr</span> <br />
+                @Html.RadioButton("typeEducation", "magistr")
+                <span>magistr</span> <br />
+                @Html.RadioButton("typeEducation", "special", true)
+                <span>special</span>
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("university")</td>
+            <td>
+                @Html.DropDownList("university",
+                new SelectList(new string[] { "LNU","LNMU", "KNU", "TNTU", "TNMU" }), "University").
+            </td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("photo")</td>
+            <td><input type="file" name="upload" /><br></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("skills")</td>
+            <td>
+                @Html.CheckBox("csharp", false)
+                <span>c#</span> <br />
+                @Html.CheckBox("html", false)
+                <span>html</span> <br />
+                @Html.CheckBox("js", false)
+                <span>js</span>
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("hobies")</td>
+            <td>@Html.ListBox("hobies", new MultiSelectList(new string[] 
+           { "football", "volleyball", "tenis", "bike" }))</td>
+        </tr>
+
+    </table>
+    <p align="center"><input type="submit" value="Submit"/><input type="reset" value="Reset" /></p>
+}
+
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Resume";
+}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-size:150%;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    img{
+        height:200px;
+        width:200px;
+    }
+</style>
+<div>
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td>@ViewBag.FirstName</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>@ViewBag.LastName</td>
+        </tr>
+        <tr>
+            <td>DateOfBirth</td>
+            <td>@ViewBag.DateOfBirth</td>
+        </tr>
+        <tr>
+            <td>Sex</td>
+            <td>@ViewBag.Sex</td>
+        </tr>
+        <tr>
+            <td>WorkExperience</td>
+            <td>@ViewBag.WorkExperience</td>
+        </tr>
+        <tr>
+            <td>TypeEducation</td>
+            <td>@ViewBag.TypeEducation</td>
+        </tr>
+        <tr>
+            <td>University</td>
+            <td>@ViewBag.University</td>
+        </tr>
+        <tr>
+            <td>Skils</td>
+            <td>@ViewBag.Skills</td>
+        </tr>
+        <tr>
+            <td>Hobies</td>
+            <td>@ViewBag.Hobies</td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td><img src=@ViewBag.Photo></td>
+        </tr>
+
+
+
+    </table>
+</div>
+@*<h2>@ViewBag.Name</h2>*@
+
